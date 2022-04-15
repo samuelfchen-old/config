@@ -10,25 +10,17 @@
 #define ADJ 3
 
 // Home row mods
-// #define HOME_A GUI_T(KC_A)
-// #define HOME_S ALT_T(KC_S)
-// #define HOME_D SFT_T(KC_D)
-// #define HOME_F CTL_T(KC_F)
+#define HOME_A  TD(TD_HOME_L4)
+#define HOME_S  TD(TD_HOME_L3)
+#define HOME_D  TD(TD_HOME_L2)
+#define HOME_F  TD(TD_HOME_L1)
 
-// #define HOME_J RCTL_T(KC_J)
-// #define HOME_K RSFT_T(KC_K)
-// #define HOME_L RALT_T(KC_L)
-// #define HOME_SC RGUI_T(KC_SCLN)
-
-#define HOME_A TD(TD_HOME_L4)
-#define HOME_S TD(TD_HOME_L3)
-#define HOME_D TD(TD_HOME_L2)
-#define HOME_F TD(TD_HOME_L1)
-
-#define HOME_J TD(TD_HOME_R1)
-#define HOME_K TD(TD_HOME_R2)
-#define HOME_L TD(TD_HOME_R3)
+#define HOME_J  TD(TD_HOME_R1)
+#define HOME_K  TD(TD_HOME_R2)
+#define HOME_L  TD(TD_HOME_R3)
 #define HOME_SC TD(TD_HOME_R4)
+
+#define T_QUOT  TD(TD_QUOT)
 
 enum custom_keycodes {
     _ALPHA = 0,
@@ -45,7 +37,7 @@ enum custom_keycodes {
 
 #define __________ALPHA_R1____________  KC_Y,   KC_U,   KC_I,   KC_O,   KC_P
 #define __________ALPHA_R2____________  KC_H,   HOME_J, HOME_K, HOME_L, HOME_SC
-#define __________ALPHA_R3____________  KC_N,   KC_M,   KC_COMM,KC_DOT, TD(TD_QUOT)
+#define __________ALPHA_R3____________  KC_N,   KC_M,   KC_COMM,KC_DOT, T_QUOT
 
 #define ___________SYM_L1_____________  KC_EXLM,KC_AT,  KC_HASH,KC_DLR, KC_PERC
 #define ___________SYM_L2_____________  KC_GRV, KC_TILD,KC_LCBR,KC_LPRN,KC_LBRC
@@ -72,4 +64,4 @@ enum custom_keycodes {
 #define ___________ADJ_R3_____________  KC_NO,  KC_MS_L,KC_MS_D,KC_MS_R,KC_WH_D
 
 #define _THUMB_L        LT(SYM, KC_ESC),    KC_SPC
-#define _THUMB_R        TD(TD_SFT),         MO(NUM)
+#define _THUMB_R        TD(TD_SFT),         TD(TD_CTL)

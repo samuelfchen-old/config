@@ -8,6 +8,20 @@ layer_state_t layer_state_set_user(layer_state_t state)                     {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_caps_word(keycode, record);
+  // static uint16_t fnx_layer_timer;
+  // switch (keycode){
+  //       case KC_F15:                                    
+  //           if(record->event.pressed){
+  //               fnx_layer_timer = timer_read();
+  //               layer_on(NUM);
+  //           } else {
+  //               layer_off(NUM);
+  //               if (timer_elapsed(fnx_layer_timer) < 150) {  
+  //                   set_oneshot_mods(MOD_LCTL);
+  //               }
+  //           }
+  //       return false;
+  // }
   return true;
 }
 
@@ -16,13 +30,14 @@ bool caps_word_press_user(uint16_t keycode) {
     // Keycodes that continue Caps Word, with shift applied.
     case KC_A ... KC_Z:
     case KC_MINS:
-    case TD(TD_HOME_L1):
-    case TD(TD_HOME_L2):
-    case TD(TD_HOME_L3):
-    case TD(TD_HOME_L4):
-    case TD(TD_HOME_R1):
-    case TD(TD_HOME_R2):
-    case TD(TD_HOME_R3):
+    case HOME_A:
+    case HOME_S:
+    case HOME_D:
+    case HOME_F:
+    case HOME_J:
+    case HOME_K:
+    case HOME_L:
+    case HOME_SC:
       add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to the next key.
       return true;
 
