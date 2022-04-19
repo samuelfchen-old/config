@@ -17,14 +17,14 @@ typedef enum {
 // Tap Dance keycodes
 enum td_keycodes {
     TD_QUOT = 0,
-    TD_HOME_L1,
-    TD_HOME_L2,
-    TD_HOME_L3,
-    TD_HOME_L4,
-    TD_HOME_R1,
-    TD_HOME_R2,
-    TD_HOME_R3,
-    TD_HOME_R4,
+    TD_MOD_L1,
+    TD_MOD_L2,
+    TD_MOD_L3,
+    TD_MOD_L4,
+    TD_MOD_R1,
+    TD_MOD_R2,
+    TD_MOD_R3,
+    TD_MOD_R4,
     TD_SFT,
     TD_CTL,
 };

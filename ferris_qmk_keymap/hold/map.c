@@ -22,6 +22,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   //           }
   //       return false;
   // }
+  if (keycode == LT(SYM, KC_ESC) && record->event.pressed) {
+      bool rc = true;
+      uint8_t mods = 0;
+      if ((mods = get_oneshot_mods()) && !has_oneshot_mods_timed_out()) {
+          clear_oneshot_mods();
+          unregister_mods(mods);
+          rc = false;
+      }
+      if ((mods = get_oneshot_locked_mods())) {
+          clear_oneshot_locked_mods();
+          unregister_mods(mods);
+          rc = false;
+      }
+      if (is_oneshot_layer_active()) {
+          layer_clear();
+          rc = false;
+      }
+      return rc;
+  }
   return true;
   
 }
@@ -31,14 +50,6 @@ bool caps_word_press_user(uint16_t keycode) {
     // Keycodes that continue Caps Word, with shift applied.
     case KC_A ... KC_Z:
     case KC_MINS:
-    case HOME_A:
-    case HOME_S:
-    case HOME_D:
-    case HOME_F:
-    case HOME_J:
-    case HOME_K:
-    case HOME_L:
-    case HOME_SC:
       add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to the next key.
       return true;
 

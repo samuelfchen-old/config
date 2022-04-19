@@ -10,17 +10,26 @@
 #define ADJ 3
 
 // Home row mods
-#define HOME_A  TD(TD_HOME_L4)
-#define HOME_S  TD(TD_HOME_L3)
-#define HOME_D  TD(TD_HOME_L2)
-#define HOME_F  TD(TD_HOME_L1)
+#define MOD_L4  TD(TD_MOD_L4)
+#define MOD_L3  TD(TD_MOD_L3)
+#define MOD_L2  TD(TD_MOD_L2)
+#define MOD_L1  TD(TD_MOD_L1)
 
-#define HOME_J  TD(TD_HOME_R1)
-#define HOME_K  TD(TD_HOME_R2)
-#define HOME_L  TD(TD_HOME_R3)
-#define HOME_SC TD(TD_HOME_R4)
+#define MOD_R1  TD(TD_MOD_R1)
+#define MOD_R2  TD(TD_MOD_R2)
+#define MOD_R3  TD(TD_MOD_R3)
+#define MOD_R4  TD(TD_MOD_R4)
 
 #define T_QUOT  TD(TD_QUOT)
+
+#define M_LCTL  MT(MOD_LCTL, KC_LCTL)
+#define M_LSFT  MT(MOD_LSFT, KC_LSFT)
+#define M_LALT  MT(MOD_LALT, KC_LALT)
+#define M_LGUI  MT(MOD_LGUI, KC_LGUI)
+#define M_RCTL  MT(MOD_RCTL, KC_RCTL)
+#define M_RSFT  MT(MOD_RSFT, KC_RSFT)
+#define M_RALT  MT(MOD_RALT, KC_RALT)
+#define M_RGUI  MT(MOD_RGUI, KC_RGUI)
 
 enum custom_keycodes {
     _ALPHA = 0,
@@ -32,23 +41,23 @@ enum custom_keycodes {
 #define ______________________________ 
 
 #define __________ALPHA_L1____________  KC_Q,   KC_W,   KC_E,   KC_R,   KC_T
-#define __________ALPHA_L2____________  HOME_A, HOME_S, HOME_D, HOME_F, KC_G
+#define __________ALPHA_L2____________  KC_A,   KC_S,   KC_D,   KC_F,   KC_G
 #define __________ALPHA_L3____________  KC_Z,   KC_X,   KC_C,   KC_V,   KC_B
 
 #define __________ALPHA_R1____________  KC_Y,   KC_U,   KC_I,   KC_O,   KC_P
-#define __________ALPHA_R2____________  KC_H,   HOME_J, HOME_K, HOME_L, HOME_SC
+#define __________ALPHA_R2____________  KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN
 #define __________ALPHA_R3____________  KC_N,   KC_M,   KC_COMM,KC_DOT, T_QUOT
 
 #define ___________SYM_L1_____________  KC_EXLM,KC_AT,  KC_HASH,KC_DLR, KC_PERC
-#define ___________SYM_L2_____________  KC_GRV, KC_TILD,KC_LCBR,KC_LPRN,KC_LBRC
-#define ___________SYM_L3_____________  KC_LT,  KC_GT,  KC_RCBR,KC_RPRN,KC_RBRC
+#define ___________SYM_L2_____________  KC_LT,  KC_LBRC,KC_LCBR,KC_LPRN,KC_TILD
+#define ___________SYM_L3_____________  KC_GT,  KC_RBRC,KC_RCBR,KC_RPRN,KC_GRV
 
 #define ___________SYM_R1_____________  KC_CIRC,KC_AMPR,KC_ASTR,KC_EQL, KC_COLN
-#define ___________SYM_R2_____________  KC_UNDS,KC_RCTL,KC_RSFT,KC_RALT,KC_RGUI
-#define ___________SYM_R3_____________  KC_BSLS,KC_MINS,KC_PLUS,KC_SLSH,KC_QUES
+#define ___________SYM_R2_____________  KC_UNDS,MOD_R1, MOD_R2, MOD_R3, MOD_R4
+#define ___________SYM_R3_____________  KC_PLUS,KC_MINS,KC_BSLS,KC_SLSH,KC_QUES
 
 #define ___________NAV_L1_____________  KC_1,   KC_2,   KC_3,   KC_4,   KC_5
-#define ___________NAV_L2_____________  KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,KC_NO
+#define ___________NAV_L2_____________  MOD_L4, MOD_L3, MOD_L2, MOD_L1, KC_GRV
 #define ___________NAV_L3_____________  KC_ESC, KC_VOLD,KC_VOLU,KC_TAB, KC_NO
 
 #define ___________NAV_R1_____________  KC_6,   KC_7,   KC_8,   KC_9,   KC_0
@@ -64,4 +73,4 @@ enum custom_keycodes {
 #define ___________ADJ_R3_____________  KC_NO,  KC_MS_L,KC_MS_D,KC_MS_R,KC_WH_D
 
 #define _THUMB_L        LT(SYM, KC_ESC),    KC_SPC
-#define _THUMB_R        TD(TD_SFT),         TD(TD_CTL)
+#define _THUMB_R        TD(TD_SFT),         MO(NUM)
