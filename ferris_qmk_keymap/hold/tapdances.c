@@ -375,7 +375,7 @@ void sft_finished(qk_tap_dance_state_t *state, void *user_data) {
     sfttap_state.state = cur_dance(state);
     switch (sfttap_state.state) {
         case TD_SINGLE_TAP: 
-            set_oneshot_mods(MOD_BIT(KC_LSFT)); 
+            set_oneshot_mods(MOD_BIT(KC_RSFT)); 
         case TD_SINGLE_HOLD: 
         case TD_DOUBLE_HOLD:
         case TD_TRIPLE_HOLD:
@@ -422,7 +422,11 @@ void ctl_finished(qk_tap_dance_state_t *state, void *user_data) {
     switch (ctltap_state.state) {
         case TD_DOUBLE_TAP:
         case TD_DOUBLE_SINGLE_TAP:
-            set_oneshot_mods(MOD_BIT(KC_LCTL)); 
+            if (get_oneshot_mods()) {
+                clear_oneshot_mods();
+            } else {
+                set_oneshot_mods(MOD_BIT(KC_LCTL)); 
+            }
         case TD_SINGLE_TAP: 
         case TD_TRIPLE_TAP:
         case TD_SINGLE_HOLD: 
@@ -432,6 +436,7 @@ void ctl_finished(qk_tap_dance_state_t *state, void *user_data) {
         default: return;
     }
 }
+
 void ctl_reset(qk_tap_dance_state_t *state, void *user_data) {
     switch (ctltap_state.state) {
         case TD_DOUBLE_TAP:
@@ -493,6 +498,8 @@ td_state_t cur_dance(qk_tap_dance_state_t *state) {
         if (state->interrupted || !state->pressed) return TD_SINGLE_TAP;
         // Key has not been interrupted, but the key is still held. Means you want to send a 'HOLD'.
         else return TD_SINGLE_HOLD;
+        // else if (state->pressed) return TD_SINGLE_HOLD;
+        // else return TD_SINGLE_TAP;
     } else if (state->count == 2) {
         // TD_DOUBLE_SINGLE_TAP is to distinguish between typing "pepper", and actually wanting a double tap
         // action when hitting 'pp'. Suggested use case for this return value is when you want to send two

@@ -23,6 +23,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   //       return false;
   // }
   return true;
+  
 }
 
 bool caps_word_press_user(uint16_t keycode) {
@@ -47,6 +48,7 @@ bool caps_word_press_user(uint16_t keycode) {
     case KC_DEL:
     case KC_UNDS:
     case KC_RSFT:
+    case KC_LCTL:
       return true;
 
     default:
