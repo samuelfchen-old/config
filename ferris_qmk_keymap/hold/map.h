@@ -49,8 +49,8 @@ enum custom_keycodes {
 #define __________ALPHA_R3____________  KC_N,   KC_M,   KC_COMM,KC_DOT, T_QUOT
 
 #define ___________SYM_L1_____________  KC_EXLM,KC_AT,  KC_HASH,KC_DLR, KC_PERC
-#define ___________SYM_L2_____________  KC_LT,  KC_LBRC,KC_LCBR,KC_LPRN,KC_TILD
-#define ___________SYM_L3_____________  KC_GT,  KC_RBRC,KC_RCBR,KC_RPRN,KC_GRV
+#define ___________SYM_L2_____________  KC_LT,  KC_LBRC,KC_LCBR,KC_LPRN,KC_GRV
+#define ___________SYM_L3_____________  KC_GT,  KC_RBRC,KC_RCBR,KC_RPRN,KC_TILD
 
 #define ___________SYM_R1_____________  KC_CIRC,KC_AMPR,KC_ASTR,KC_EQL, KC_COLN
 #define ___________SYM_R2_____________  KC_UNDS,MOD_R1, MOD_R2, MOD_R3, MOD_R4
