@@ -64,9 +64,9 @@ enum custom_keycodes {
 #define ___________NAV_R2_____________  KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,KC_BSPC
 #define ___________NAV_R3_____________  KC_NO,  KC_ENT, KC_PGUP,KC_PGDN,KC_DEL
 
-#define ___________ADJ_L1_____________  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5
-#define ___________ADJ_L2_____________  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10
-#define ___________ADJ_L3_____________  KC_F11, KC_F12, KC_NO,  KC_NO,  KC_PSCR
+#define ___________ADJ_L1_____________  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_NO
+#define ___________ADJ_L2_____________  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_NO
+#define ___________ADJ_L3_____________  KC_F9,  KC_F10, KC_F11, KC_F12, KC_PSCR
 
 #define ___________ADJ_R1_____________  RESET,  KC_NO,  KC_NO,  KC_NO,  KC_NO
 #define ___________ADJ_R2_____________  KC_NO,  KC_BTN1,KC_MS_U,KC_BTN2,KC_WH_U
