@@ -143,5 +143,10 @@ else
     fi
 fi
 unset __conda_setup
+
+zc() {
+  readonly args=${1:?"required <args> for z missing"}
+  code "$( z -e ${args})"
+}
 # <<< conda initialize <<<
 
