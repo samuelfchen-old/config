@@ -31,10 +31,11 @@
 	cob = checkout -b
 	rbi = "!f(){ git rb -i HEAD~${1}; }; f"	
 	rbs = "!f(){ git rb $(git branch | fzf); }; f"	
-	bs = "!f(){ git checkout $(git branch | fzf); }; f"
+	cos = "!f(){ git checkout $(git branch | fzf); }; f"
+	dbs = "!f(){ git branch -D $(git branch | fzf); }; f"
 	cm = !git add -A && git commit -m
 	save = !git add -A && git commit -m 'SAVEPOINT'
-	wip = !git add -u && git commit -mWIP
+	wip = !git add -u && git commit -m'wip: wip'
 	undo = reset HEAD~1 --mixed
 	amend = commit -a --amend
 	fam = commit -a --amend --no-edit
