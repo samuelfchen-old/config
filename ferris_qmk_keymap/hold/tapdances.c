@@ -193,11 +193,11 @@ void sft_finished(qk_tap_dance_state_t *state, void *user_data) {
     sfttap_state.state = cur_dance(state);
     switch (sfttap_state.state) {
         case TD_SINGLE_TAP: 
-            set_oneshot_mods(MOD_BIT(KC_RSFT)); 
+            set_oneshot_mods(MOD_BIT(KC_LSFT)); 
         case TD_SINGLE_HOLD: 
         case TD_DOUBLE_HOLD:
         case TD_TRIPLE_HOLD:
-            register_code(KC_RSFT); break;
+            register_code(KC_LSFT); break;
         case TD_DOUBLE_TAP: 
         case TD_DOUBLE_SINGLE_TAP:
         case TD_TRIPLE_TAP:
@@ -212,7 +212,7 @@ void sft_reset(qk_tap_dance_state_t *state, void *user_data) {
         case TD_SINGLE_HOLD:
         case TD_DOUBLE_HOLD:
         case TD_TRIPLE_HOLD:
-            unregister_code(KC_RSFT); break;
+            unregister_code(KC_LSFT); break;
         case TD_DOUBLE_TAP: 
         case TD_DOUBLE_SINGLE_TAP:
         case TD_TRIPLE_TAP:
