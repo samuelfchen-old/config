@@ -44,6 +44,7 @@
 	bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
 	p = push origin HEAD
 	pl = pull origin HEAD
+	ppp = !git commit -a --no-edit && git push -f
 [push]
 	default=current
 [pull]
